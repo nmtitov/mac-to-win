@@ -9,3 +9,10 @@ The goal of this project is to replicate macOS user experience in Windows 11 bec
 
 For keyboard bindings I currently use Power Toys and Autohotkey 2.
 
+
+
+List of Recommended Software
+============================
+
+1. Git with Git Bash environment https://git-scm.com/downloads
+2. Terminal app with tabs https://github.com/Microsoft/Terminal
