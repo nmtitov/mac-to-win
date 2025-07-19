@@ -50,7 +50,7 @@ LWin & Tab:: {
 }
 #HotIf
 
-; Disable Win+L and remap it to Ctrl+L
+; Disable Win+L and remap it to Ctrl+L - requires Win+L "feature" to be disabled in Registry.
 LWin & L:: {
   ; Send Ctrl+L
   Send "^l" 
