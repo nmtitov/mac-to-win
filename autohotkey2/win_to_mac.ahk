@@ -1,5 +1,14 @@
 #Requires AutoHotkey v2.0
 
+; Syntax of AutoHotkey:
+; ! = Alt
+; ^ = Ctrl
+; <^ = LCtrl
+; >^ = RCtrl
+; + = Shift
+; <+ = LShift
+; >+ RShift
+
 ; This script requires some keys to be remapped in "KeyTweak" app.
 ; 1. Remap "Caps Lock" to "Left Control".
 ; 2. Remap "Left Win" to "Left Alt".
@@ -23,9 +32,7 @@ RCtrl & Tab::AltTab
 RCtrl & Space::Send "#{Space}"
 
 RCtrl & A::Send "^a"
-RCtrl & Q::{
-    Send "!{F4}"
-}
+RCtrl & Q::Send "!{F4}"
 
 ; Tabs cycling.
 >^+sc01A::Send("^+{Tab}")
