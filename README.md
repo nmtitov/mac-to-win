@@ -1,4 +1,4 @@
-Mac to Win
+Win to Mac
 ==========
 
 I had been unsuccessfully looking for a 1-click script which would turn my newly purchased Windows 11 laptop into something similar to macOS 14.6.1.
