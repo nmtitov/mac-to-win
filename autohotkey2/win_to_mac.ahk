@@ -1,65 +1,27 @@
 #Requires AutoHotkey v2.0
 
-SendMode "Event"
+; This script requires some keys to be remapped in "KeyTweak" app.
+; 1. Remap "Caps Lock" to "Left Control".
+; 2. Remap "Left Win" to "Left Alt".
+; 3. Remap "Left Alt" to "Right Control" (RCtrl).
 
-; Remap CapsLock to Control
-CapsLock::Control
+; Remap CapsLock to Control - Currently remapped in "KeyTweak"!
+; CapsLock::LCtrl
 
-; Disable Start menu from Ctrl+Esc
+; Disable "Start menu" from Ctrl+Esc.
 Control & Esc::vkE8
 
-; Remap Alt <-> LWin. Prevent LWin from getting stuck.
-; Alt::LWin ; Assume that Alt <-> Win are remapped by another tool.
-
-*LWin::{
-  SetKeyDelay -1
-  if !GetKeyState("LWin") {
-    Send "{Blind}{LWin up}"
-  }
-  Send "{Blind}{Alt DownR}"
-}
-
-*LWin up::{
-  SetKeyDelay -1
-  Send "{Blind}{Alt up}"
-}
-; End of "Remap Alt <-> LWin"
-
-; Disable Start menu from Win Key but keep using Win Key for other shortcuts
+; Disable Start menu from Win Key but keep using Win Key for other shortcuts.
 ~LWin::vkE8
 
-; Disable "standard" ALT+TAB
+; Disable "standard" Alt+Tab.
 LAlt & Tab::vkE8
 
-; Remap WIN+TAB to ALT+TAB
-AltTabMenu := false
+; In this script RCtrl is treated as logical "Cmd" from MacOS.
 
-LWin & Tab:: {
-    global AltTabMenu := true
-    if GetKeyState("Shift", "P") {
-        Send "{Alt Down}{Shift Down}{Tab}"
-    } else {
-        Send "{Alt Down}{Tab}"
-    }
-}
+RCtrl & Tab::AltTab
 
-#HotIf (AltTabMenu)
-~*LWin Up:: {
-    Send "{Shift Up}{Alt Up}"
-    global AltTabMenu := false
-}
-#HotIf
+RCtrl & Space::Send "#{Space}"
 
-; Disable Win+L and remap it to Ctrl+L - requires Win+L "feature" to be disabled in Registry.
-LWin & L:: {
-  ; Send Ctrl+L
-  Send "^l" 
-  return
-}
-
-; Cmd + Click to open Chrome links in background t;abs
-LWin & LButton:: {
-    Send "{LCtrl down}"
-    Send "{Click, Left}"
-    Send "{LCtrl up}"
-}
+RCtrl & A::Send "^a"
+RCtrl & Q::Send "!{F4}"
