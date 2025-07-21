@@ -20,8 +20,20 @@ LAlt & Tab::vkE8
 ; In this script RCtrl is treated as logical "Cmd" from MacOS.
 
 RCtrl & Tab::AltTab
-
 RCtrl & Space::Send "#{Space}"
 
 RCtrl & A::Send "^a"
-RCtrl & Q::Send "!{F4}"
+RCtrl & Q::{
+    Send "!{F4}"
+}
+
+; Tabs cycling.
+>^+sc01A::Send("^+{Tab}")
+>^+sc01B::Send("^{Tab}")
+
+LCtrl & A::Send "{Home}"
+LCtrl & E::Send "{End}"
+LCtrl & P::Send "{Up}"
+LCtrl & N::Send "{Down}"
+
+LCtrl & D::Send "{Delete}"
