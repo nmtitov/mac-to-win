@@ -35,6 +35,7 @@ RCtrl & A::Send "^a"
 RCtrl & Q::Send "!{F4}"
 
 ; Tabs cycling.
+; "RCtrl" is ">^" and "Shift" is "+" because "&" syntax doesn't support 3 keys.
 >^+sc01A::Send("^+{Tab}")
 >^+sc01B::Send("^{Tab}")
 
