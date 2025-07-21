@@ -44,3 +44,4 @@ LCtrl & P::Send "{Up}"
 LCtrl & N::Send "{Down}"
 
 LCtrl & D::Send "{Delete}"
+LCtrl & W::Send "^{Backspace}"
