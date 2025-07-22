@@ -35,9 +35,8 @@ LAlt & Tab::vkE8
     Send("{Alt down}{Tab}")
     try {
         KeyWait("RCtrl")
-        KeyWait("Shift")
     }
-    Send("{Shift up}{Alt up}")
+    Send("{Alt up}")
 }
 
 >^+Tab:: {
