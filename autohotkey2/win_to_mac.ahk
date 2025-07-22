@@ -1,5 +1,7 @@
 #Requires AutoHotkey v2.0
 
+#SingleInstance
+
 ; Syntax of AutoHotkey:
 ; ! = Alt
 ; ^ = Ctrl
