@@ -30,7 +30,25 @@ LAlt & Tab::vkE8
 
 ; In this script RCtrl is treated as logical "Cmd" from MacOS.
 
-RCtrl & Tab::AltTab
+; "Alt"-"Tab"
+>^Tab:: {
+    Send("{Alt down}{Tab}")
+    try {
+        KeyWait("RCtrl")
+        KeyWait("Shift")
+    }
+    Send("{Shift up}{Alt up}")
+}
+
+>^+Tab:: {
+    Send("{Alt down}{Shift down}{Tab}")
+    try {
+        KeyWait("RCtrl")
+        KeyWait("Shift")
+    }
+    Send("{Shift up}{Alt up}")
+}
+
 RCtrl & Space::Send "#{Space}"
 
 RCtrl & A::Send "^a"
