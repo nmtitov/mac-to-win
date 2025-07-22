@@ -2,6 +2,8 @@
 
 #SingleInstance
 
+; In this script "RCtrl" is treated as logical "Cmd" from MacOS.
+
 ; Syntax of AutoHotkey:
 ; ! = Alt
 ; ^ = Ctrl
@@ -27,8 +29,6 @@ Control & Esc::vkE8
 
 ; Disable "standard" Alt+Tab.
 LAlt & Tab::vkE8
-
-; In this script RCtrl is treated as logical "Cmd" from MacOS.
 
 ; "Alt"-"Tab"
 >^Tab:: {
