@@ -13,6 +13,8 @@
 ; <+ = LShift
 ; >+ RShift
 
+; "&" syntax doesn't support 3 keys. The codes from above should be used in in this case.
+
 ; This script requires some keys to be remapped in "KeyTweak" app.
 ; 1. Remap "Caps Lock" to "Left Control".
 ; 2. Remap "Left Win" to "Left Alt".
@@ -55,7 +57,6 @@ RCtrl & Space::Send "#{Space}"
 RCtrl & Q::Send "!{F4}"
 
 ; Tabs cycling.
-; "RCtrl" is ">^" and "Shift" is "+" because "&" syntax doesn't support 3 keys.
 >^+sc01A::Send("^+{Tab}")
 >^+sc01B::Send("^{Tab}")
 
