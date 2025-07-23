@@ -70,3 +70,16 @@ LCtrl & N::Send "{Down}"
 
 LCtrl & D::Send "{Delete}"
 LCtrl & W::Send "^{Backspace}"
+
+
+; App-specific stuff.
+
+; "Terminal".
+; Operations below must be binded to Alt+* keys in Terminal app.
+#HotIf WinActive("Terminal")
+
+RCtrl & C::Send("!c")
+RCtrl & W::Send("!w")
+LCtrl & W::Send("!{Backspace}")
+
+#HotIf
