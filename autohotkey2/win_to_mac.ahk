@@ -2,6 +2,10 @@
 
 #SingleInstance
 
+; ------------
+; Introduction
+; ------------
+
 ; In this script "RCtrl" is treated as logical "Cmd" from MacOS.
 
 ; Syntax of AutoHotkey:
@@ -23,14 +27,20 @@
 ; Remap CapsLock to Control - Currently remapped in "KeyTweak"!
 ; CapsLock::LCtrl
 
-; Disable "Start menu" from Ctrl+Esc.
-Control & Esc::vkE8
 
-; Disable Start menu from Win Key but keep using Win Key for other shortcuts.
-~LWin::vkE8
+Control & Esc::vkE8 ; Disable "Start menu" from Ctrl+Esc.
+~LWin::vkE8 ; Disable Start menu from Win Key but keep using Win Key for other shortcuts.
+LAlt & Tab::vkE8 ; Disable "standard" Alt+Tab.
 
-; Disable "standard" Alt+Tab.
-LAlt & Tab::vkE8
+
+
+; ------------
+; Key Bindings
+; ------------
+
+; Session
+>^<^Q:: Send("#l") ; TODO: nik / doesn't work, must check this.
+>^+Q:: Send("#{x}{u}{i}") ; TODO: nik / doesn't work, must check this.
 
 ; "Alt"-"Tab"
 >^Tab:: {
@@ -71,8 +81,14 @@ LCtrl & N::Send "{Down}"
 LCtrl & D::Send "{Delete}"
 LCtrl & W::Send "^{Backspace}"
 
+Alt & Left::Send "^{Left}"
+Alt & Right::Send "^{Right}"
 
-; App-specific stuff.
+
+
+; ------------------
+; App-specific stuff
+; ------------------
 
 ; "Terminal".
 ; Operations below must be binded to Alt+* keys in Terminal app.
